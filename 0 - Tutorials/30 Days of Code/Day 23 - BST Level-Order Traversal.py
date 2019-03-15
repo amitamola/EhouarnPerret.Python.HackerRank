@@ -17,13 +17,13 @@ class Solution:
                 root.right = current
         return root
 
-    def level_order_traverse(self, root):
+    def levelOrder(self, root):
         #Write your code here
         if root:
             queue = [root]
             while queue:
                 node = queue.pop()
-                print(node.data)
+                print(node.data, end=' ')
                 if node.left:
                     queue.insert(0, node.left)
                 if node.right:
@@ -35,4 +35,4 @@ root = None
 for i in range(T):
     data = int(input())
     root = myTree.insert(root, data)
-myTree.level_order_traverse(root)
+myTree.levelOrder(root)
